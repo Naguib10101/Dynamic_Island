@@ -1,0 +1,73 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+.dynamic-island {
+  margin: 32px auto;
+  position: relative;
+}
+.dynamic-island .island-pill {
+  margin: 20px auto;
+  background: #000;
+  width: 80px;
+  height: 20px;
+  border-radius: 60px;
+  cursor: pointer;
+  transition: all 700ms cubic-bezier(0.32, 0.7, 0.22, 1.2);
+  -webkit-border-radius: 60px;
+  -moz-border-radius: 60px;
+  -ms-border-radius: 60px;
+  -o-border-radius: 60px;
+  -webkit-transition: all 700ms cubic-bezier(0.32, 0.7, 0.22, 1.2);
+  -moz-transition: all 700ms cubic-bezier(0.32, 0.7, 0.22, 1.2);
+  -ms-transition: all 700ms cubic-bezier(0.32, 0.7, 0.22, 1.2);
+  -o-transition: all 700ms cubic-bezier(0.32, 0.7, 0.22, 1.2);
+}
+.dynamic-island.active .island-pill {
+  width: 360px;
+  height: 60px;
+}
+.island-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  color: #fff;
+  opacity: 0;
+  filter: blur(10px);
+  width: 346px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) scale(0.2);
+  pointer-events: none;
+  transition: all 700ms cubic-bezier(0.32, 0.7, 0.22, 1.2);
+}
+.dynamic-island .island-container.active {
+  opacity: 1;
+  filter: blur(0);
+  transform: translate(-50%, -50%) scale(1);
+}
+.island-container .left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.island-container .left .img-content {
+  height: 50px;
+}
+
+.island-container .left .text-content .device{
+  opacity: 40%;
+  font-size: 14px;
+}
+
+.island-container .left .img-content img {
+  height: 100%;
+  border-radius: 50%;
+}
+.island-container .right .calls {
+  display: flex;
+  gap: 10px;
+}
